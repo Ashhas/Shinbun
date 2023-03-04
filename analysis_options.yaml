@@ -1,3 +1,32 @@
 include: package:very_good_analysis/analysis_options.3.1.0.yaml
 linter:
   rules:
+
+dart_code_metrics:
+  metrics:
+    cyclomatic-complexity: 15
+    halstead-volume: 150
+    lines-of-code: 120
+    maximum-nesting-level: 5
+    number-of-methods: 12
+    number-of-parameters: 6
+    source-lines-of-code: 134
+  anti-patterns:
+    - long-method:
+        exclude:
+          - test/**
+  rules:
+    - avoid-dynamic
+    - avoid-global-state
+    - avoid-unused-parameters
+    - no-boolean-literal-compare
+    - prefer-trailing-comma:
+        break-on: 3
+    - no-equal-then-else
+    - no-magic-number
+    # Flutter specific
+    - always-remove-listener
+    - avoid-returning-widgets
+    - avoid-unnecessary-setstate
+    - avoid-wrapping-in-padding
+    - prefer-const-border-radius
